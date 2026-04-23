@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaTech — Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: #f0f2f5;
+    }
+
+    /* MENU LATERAL */
+    .sidebar {
+      width: 240px;
+      background-color: #4f46e5;
+      display: flex;
+      flex-direction: column;
+      padding: 32px 24px;
+    }
+
+    .sidebar h1 {
+      color: white;
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+
+    .sidebar a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 15px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar a:hover {
+      color: white;
+    }
+
+    .sidebar a.ativo {
+      color: white;
+      font-weight: 600;
+    }
+
+    /* ÁREA PRINCIPAL */
+    .main {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .main h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 32px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: flex;
+      gap: 24px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 24px;
+      flex: 1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 36px;
+      font-weight: 700;
+      color: #4f46e5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MENU LATERAL -->
+  <div class="sidebar">
+    <h1>NovaTech</h1>
+    <a href="#" class="ativo">Início</a>
+    <a href="#">Tarefas</a>
+    <a href="#">Equipe</a>
+    <a href="#">Configurações</a>
+  </div>
+
+  <!-- ÁREA PRINCIPAL -->
+  <div class="main">
+    <h2>Olá, José! 👋</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Total de Tarefas</h3>
+        <p>12</p>
+      </div>
+      <div class="card">
+        <h3>Tarefas Concluídas</h3>
+        <p>8</p>
+      </div>
+      <div class="card">
+        <h3>Tarefas Pendentes</h3>
+        <p>4</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
