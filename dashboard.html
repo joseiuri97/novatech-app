@@ -20,7 +20,6 @@
       background-color: #f0f2f5;
     }
 
-    /* MENU LATERAL */
     .sidebar {
       width: 240px;
       background-color: #4f46e5;
@@ -52,10 +51,29 @@
       font-weight: 600;
     }
 
-    /* ÁREA PRINCIPAL */
+    .sidebar button {
+      background: none;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: auto;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .sidebar button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
     .main {
       flex: 1;
       padding: 40px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
     }
 
     .main h2 {
@@ -64,7 +82,6 @@
       margin-bottom: 32px;
     }
 
-    /* CARDS */
     .cards {
       display: flex;
       gap: 24px;
@@ -90,28 +107,53 @@
       color: #4f46e5;
     }
 
-    .sidebar button {
-      background: none;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: rgba(255, 255, 255, 0.7);
-      padding: 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: auto;
-      font-size: 14px;
-      width: 100%;
+    .tarefas {
+      margin-top: 32px;
     }
 
-    .sidebar button:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      color: white;
+    .tarefas h3 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    .tarefa {
+      background-color: white;
+      padding: 16px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .tarefa span {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .status {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .concluida {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+
+    .pendente {
+      background-color: #fef3c7;
+      color: #92400e;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- MENU LATERAL -->
   <div class="sidebar">
     <h1>NovaTech</h1>
     <a href="#" class="ativo">Início</a>
@@ -121,7 +163,6 @@
     <button onclick="sair()">Sair</button>
   </div>
 
-  <!-- ÁREA PRINCIPAL -->
   <div class="main">
     <h2>Olá, José! 👋</h2>
 
@@ -139,7 +180,27 @@
         <p>4</p>
       </div>
     </div>
-  </div>
+
+    <div class="tarefas">
+      <h3>Minhas Tarefas</h3>
+
+      <div class="tarefa">
+        <span>Criar página de login</span>
+        <span class="status concluida">Concluída</span>
+      </div>
+
+      <div class="tarefa">
+        <span>Criar página de cadastro</span>
+        <span class="status concluida">Concluída</span>
+      </div>
+
+      <div class="tarefa">
+        <span>Criar dashboard</span>
+        <span class="status pendente">Pendente</span>
+      </div>
+
+    </div>
+
   </div>
 
   <script>
@@ -148,9 +209,6 @@
     }
   </script>
 
-</body>
-
-</html>
 </body>
 
 </html>
