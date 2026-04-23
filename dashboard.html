@@ -156,6 +156,7 @@
     .tarefa span {
       font-size: 14px;
       color: #333;
+      cursor: pointer;
     }
 
     .status {
@@ -230,19 +231,19 @@
       <h3>Minhas Tarefas</h3>
 
       <div class="tarefa">
-        <span>Criar página de login</span>
+        <span onclick="concluir(this)">Criar página de login</span>
         <span class="status concluida">Concluída</span>
         <button class="btn-excluir" onclick="excluir(this)">✕</button>
       </div>
 
       <div class="tarefa">
-        <span>Criar página de cadastro</span>
+        <span onclick="concluir(this)">Criar página de cadastro</span>
         <span class="status concluida">Concluída</span>
         <button class="btn-excluir" onclick="excluir(this)">✕</button>
       </div>
 
       <div class="tarefa">
-        <span>Criar dashboard</span>
+        <span onclick="concluir(this)">Criar dashboard</span>
         <span class="status pendente">Pendente</span>
         <button class="btn-excluir" onclick="excluir(this)">✕</button>
       </div>
@@ -268,7 +269,7 @@
       const novaTarefa = document.createElement('div')
       novaTarefa.classList.add('tarefa')
       novaTarefa.innerHTML = `
-        <span>${input.value}</span>
+        <span onclick="concluir(this)">${input.value}</span>
         <span class="status pendente">Pendente</span>
         <button class="btn-excluir" onclick="excluir(this)">✕</button>
       `
@@ -279,6 +280,24 @@
     function excluir(botao) {
       const tarefa = botao.parentElement
       tarefa.remove()
+    }
+
+    function concluir(span) {
+      const status = span.parentElement.querySelector('.status')
+
+      if (status.classList.contains('pendente')) {
+        status.classList.remove('pendente')
+        status.classList.add('concluida')
+        status.textContent = 'Concluída'
+        span.style.textDecoration = 'line-through'
+        span.style.color = '#aaa'
+      } else {
+        status.classList.remove('concluida')
+        status.classList.add('pendente')
+        status.textContent = 'Pendente'
+        span.style.textDecoration = 'none'
+        span.style.color = '#333'
+      }
     }
   </script>
 
